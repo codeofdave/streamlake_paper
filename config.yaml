@@ -1,0 +1,9 @@
+log:
+  path: 'streamlake.log'
+  level: 'INFO'
+  rotation: '100 MB'
+
+
+schema:
+  file_type: 'xlsx'
+  protocol: 'HTTP'
