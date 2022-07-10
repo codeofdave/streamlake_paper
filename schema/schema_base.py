@@ -1,9 +1,86 @@
-import csv
+from random import randint, choice
+import time
+
 
 class SchemaBase:
     def __init__(self):
-        pass
-    def get_schema(self, file_path=None, file_type='xlsx'):
-        with open(file_path,'r') as file:
-
-
+        self.Length = randint(1, 63)
+        self.LocalProvince = randint(1, 280)
+        self.LocalCity = randint(1, 9999)
+        self.OwnerProvince = randint(1, 280)
+        self.OwnerCity = randint(1, 9999)
+        self.RoamingType = randint(1, 8)
+        self.Interface = randint(1, 32)
+        self.xDRID = randint(1000000000000000, 9999999999999999)
+        self.RAT = randint(1, 8)
+        self.IMSI = ''.join([choice('0123456789abcdef') for i in range(32)])
+        self.IMEI_SV = ''.join([choice('0123456789abcdef') for i in range(32)])
+        self.MSISDN = ''.join([choice('0123456789abcdef') for i in range(32)])
+        self.MachineIPAddtype = randint(1, 8)
+        self.SGW_GGSNIPAdd = '%s.%s.%s.%s' % (randint(1, 255), randint(1, 255), randint(1, 255), randint(1, 255))
+        self.eNB_SGSNIPAdd = '%s.%s.%s.%s' % (randint(1, 255), randint(1, 255), randint(1, 255), randint(1, 255))
+        self.PGWAdd = '%s.%s.%s.%s' % (randint(1, 255), randint(1, 255), randint(1, 255), randint(1, 255))
+        self.SGW_GGSNPort = randint(1, 9999)
+        self.eNB_SGSNPort = randint(1, 9999)
+        self.PGWPort = randint(1, 9999)
+        self.eNB_SGSNGTP_TEID = randint(100000000000, 999999999999)
+        self.SGW_GGSNGTP_TEID = randint(100000000000, 999999999999)
+        self.TAC = randint(10000, 99999)
+        self.CellID = randint(100000000000, 999999999999)
+        self.APN = choice(['CMNET1', 'CMNET2', 'CMNET3', 'CMNET4'])
+        self.AppTypeCode = randint(1, 100)
+        self.ProcedureStartTime = time.time()
+        self.ProcedureEndTime = time.time() + randint(1, 60)
+        self.longitude = randint(0, 180)
+        self.latitude = randint(0, 180)
+        self.Height = randint(-1000, 1000)
+        self.Coordinatesystem = choice(['T1', 'T2', 'T3', 'T4'])
+        self.ProtocolType = randint(1, 8)
+        self.AppType = randint(1, 100)
+        self.AppSub_type = randint(1, 1000)
+        self.AppContent = randint(1, 32)
+        self.AppStatus = randint(1, 4)
+        self.IPaddresstype = 'ipv4'
+        self.USER_IPv4 = '%s.%s.%s.%s' % (randint(1, 255), randint(1, 255), randint(1, 255), randint(1, 255))
+        self.USER_IPv6 = ''
+        self.UserPort = randint(10000, 99999)
+        self.L4protocal = randint(1, 4)
+        self.AppServerIP_IPv4 = '%s.%s.%s.%s' % (randint(1, 255), randint(1, 255), randint(1, 255), randint(1, 255))
+        self.AppServerIP_IPv6 = ''
+        self.AppServerPort = choice([80, 7443, 8443, 9443])
+        self.ULData = randint(10000, 99999)
+        self.DLData = randint(100000, 999999)
+        self.ULIPPacket = randint(1, 1000)
+        self.DLIPPacket = randint(1, 1000)
+        self.updura = randint(1000, 9999)
+        self.downdura = randint(1000, 9999)
+        self.ULDisorderIPPacket = randint(0, 20)
+        self.DLDisorderIPPacket = randint(0, 20)
+        self.ULRetransIPPacket = randint(0, 20)
+        self.DLRetransIPPacket = randint(0, 20)
+        self.TCPResponseTime = randint(1000, 9999)
+        self.TCPACKTime = randint(1000, 9999)
+        self.UL_IP_FRAG_PACKETS = 0
+        self.DL_IP_FRAG_PACKETS = 0
+        self.FirstReqTime = randint(1, 10000)
+        self.FirstResponseTime = 0
+        self.Window = 81664
+        self.MSS = 1400
+        self.TCPSYNNum = 5
+        self.TCPStatus = choice([0, 1])
+        self.SessionEnd = choice([0, 1])
+        self.TCPSYNACKMum = 5
+        self.TCPACKNum = 0
+        self.TCP1_2HandshakeStatus = choice([0, 1])
+        self.TCP2_3HandshakeStatus = choice([0, 1])
+        self.ULProbeID = randint(0, 32)
+        self.ULLINKIndex = randint(0, 32)
+        self.DLProbeID = randint(0, 32)
+        self.DLLINKIndex = randint(0, 32)
+        self.TransactionID = randint(0, 32)
+        self.FlowControl = choice([0, 1])
+        self.UL_AVG_RTT = randint(0, 64)
+        self.DW_AVG_RTT = randint(0, 64)
+        self.UserAccount = ''.join([choice('0123456789abcdefghijklmnopqrstuvwxyz') for i in range(16)])
+        self.ReferXDRID = randint(100000000000000, 9999999999999999)
+        self.Rule_source = choice([0, 1])

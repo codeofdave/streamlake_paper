@@ -3,7 +3,7 @@ log:
   level: 'INFO'
   rotation: '100 MB'
 
-
-schema:
-  file_type: 'xlsx'
-  protocol: 'HTTP'
+protocol: 'HTTP'
+gen:
+  file_path: ''
+  size_mb: 10
