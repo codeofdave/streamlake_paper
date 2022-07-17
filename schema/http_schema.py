@@ -1,7 +1,6 @@
 from schema.schema_base import SchemaBase
 from random import randint, choice
 
-
 BASE_STR = '0123456789abcdefghijklmnopqrstuvwxyz'
 
 
@@ -54,5 +53,6 @@ class HttpSchema(SchemaBase):
 
 
 import json
+
 x = HttpSchema()
 print(json.dumps(x.__dict__))
